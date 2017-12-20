@@ -1,10 +1,25 @@
 $(document).ready(function () {
+
     $('#fullpage').fullpage({
         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
         anchors: ['accueil', 'gallerie', 'situation', 'tarifs', 'contact'],
         menu: '#menu'
     });
+
     $('.ui.embed').embed();
+
+    var map = new GMaps({
+        el: '#map',
+        lat: 42.980462,
+        lng: -0.401079999999979,
+        zoom: 13,
+    });
+    map.addMarker({
+        lat: 42.980462,
+        lng: -0.401079999999979,
+        title: 'Chalet',
+    });
+
     $('#contactform')
         .form({
                 on: 'blur',
@@ -31,6 +46,7 @@ $(document).ready(function () {
 
             }
         );
+
     $('#contactform')
         .submit(
             function (event) {

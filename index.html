@@ -88,15 +88,29 @@
 
     <div class="section" id="section4">
         <div class="ui basic segment" style="width: 50%;margin: 0 auto;">
+
             <form class="ui form" id="contactform" method="post">
+
                 <div class="field">
-                    <label>Votre Email</label>
-                    <input type="text" name="emailfrom" placeholder="Votre email">
+                    <label>Votre Nom / Prénom</label>
+                    <input type="text" name="email_name" placeholder="Nom / Prénom">
                 </div>
+
+                <div class="field">
+                    <label>Sujet</label>
+                    <input type="text" name="email_subject" placeholder="Sujet">
+                </div>
+
+                <div class="field">
+                    <label>Votre adresse Email</label>
+                    <input type="text" name="email_from" placeholder="xxx@yyy.zzz">
+                </div>
+
                 <div class="field">
                     <label>Message</label>
                     <textarea name="email_content"></textarea>
                 </div>
+
                 <div id="sendMailMessage"></div>
                 <button>Envoyer</button>
 

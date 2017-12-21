@@ -24,8 +24,8 @@ $(document).ready(function () {
         .form({
                 on: 'blur',
                 fields: {
-                    emailfrom: {
-                        identifier: 'emailfrom',
+                    email_from: {
+                        identifier: 'email_from',
                         rules: [
                             {
                                 type: 'email',
@@ -39,6 +39,24 @@ $(document).ready(function () {
                             {
                                 type: 'empty',
                                 prompt: 'Merci de renseigner un message.'
+                            }
+                        ]
+                    },
+                    email_subject: {
+                        identifier: 'email_subject',
+                        rules: [
+                            {
+                                type: 'empty',
+                                prompt: 'Merci de renseigner un sujet.'
+                            }
+                        ]
+                    },
+                    email_name: {
+                        identifier: 'email_name',
+                        rules: [
+                            {
+                                type: 'empty',
+                                prompt: 'Merci de renseigner votre nom.'
                             }
                         ]
                     }
@@ -55,7 +73,9 @@ $(document).ready(function () {
                     // form is valid (both email and name)
                     $.post('http://localhost/php/email.php',
                         {
-                            emailfrom: $('#contactform').find('input[name="emailfrom"]').val(),
+                            email_name: $('#contactform').find('input[name="email_name"]').val(),
+                            email_subject: $('#contactform').find('input[name="email_subject"]').val(),
+                            email_from: $('#contactform').find('input[name="email_from"]').val(),
                             email_content: $('#contactform').find('textarea[name="email_content"]').val()
                         },
                         function (data) {
